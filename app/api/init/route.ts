@@ -11,16 +11,18 @@ export async function GET() {
   try {
     const db = getDb();
     
-    // Verify tables exist
-    const tables = db.prepare(`
-      SELECT name FROM sqlite_master 
-      WHERE type='table' AND name IN ('users', 'tasks')
-    `).all();
+    // For JSON database, just verify it exists and has the expected structure
+    const hasUsers = Array.isArray(db.users);
+    const hasTasks = Array.isArray(db.tasks);
     
     return NextResponse.json({
       success: true,
       message: 'Database initialized successfully',
-      tables: tables.map((t: any) => t.name),
+      tables: ['users', 'tasks'],
+      status: {
+        users: hasUsers ? 'ready' : 'missing',
+        tasks: hasTasks ? 'ready' : 'missing',
+      },
     });
   } catch (error) {
     console.error('Database initialization error:', error);
