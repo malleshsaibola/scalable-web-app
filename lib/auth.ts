@@ -84,7 +84,11 @@ export async function generateToken(
 export async function verifyToken(token: string): Promise<TokenPayload> {
   try {
     const { payload } = await jwtVerify(token, getSecretKey());
-    return payload as TokenPayload;
+    // Validate that payload has required fields
+    if (!payload.userId || !payload.email) {
+      throw new Error('Invalid token payload');
+    }
+    return payload as unknown as TokenPayload;
   } catch (error) {
     throw new Error('Invalid or expired token');
   }
