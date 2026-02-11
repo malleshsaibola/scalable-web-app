@@ -29,6 +29,10 @@ export function getDb(): Database {
       throw new Error('Failed to connect to database');
     }
   }
+  // TypeScript safety: db is guaranteed to be non-null here
+  if (!db) {
+    throw new Error('Database initialization failed');
+  }
   return db;
 }
 
