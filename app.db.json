@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": "1a3c9f20-4f62-4f1a-b79d-eae829722c31",
+      "email": "malleshsaibola@gmail.com",
+      "password": "$2a$10$QcetLCAwUnaBstN4T3v1Pe1QLtEHjgvgkS8qV8bakvuUsqvJXkVkS",
+      "name": "Mallesh Saibola",
+      "createdAt": "2026-02-10T18:36:17.256Z",
+      "updatedAt": "2026-02-10T18:36:17.256Z"
+    },
+    {
+      "id": "3168f1c6-2390-4c0e-b462-7b199a7736d9",
+      "email": "test@example.com",
+      "password": "$2a$10$8QYVWWF9uJ9FDOVma.XQoea2AcFU.clkyT0SawSpM.IVxUw4Zj4Cy",
+      "name": "Test User",
+      "createdAt": "2026-02-11T09:37:50.218Z",
+      "updatedAt": "2026-02-11T09:37:50.218Z"
+    },
+    {
+      "id": "20b7e83e-f8bf-43f0-a0c7-b696b421b71c",
+      "email": "malleshsaibolla@gmail.com",
+      "password": "$2a$10$SoAnIUr82t.LJfnefCH6bOaiUP.H46kuCcycTOWpGSI0Mnp5NyN.2",
+      "name": "Mallesh Saibola",
+      "createdAt": "2026-02-11T09:39:24.512Z",
+      "updatedAt": "2026-02-11T09:39:24.512Z"
+    },
+    {
+      "id": "4ab25573-d91b-4603-9e33-96fe05d68b41",
+      "email": "asimrc@gmail.com",
+      "password": "$2a$10$u.06rlfPxqitHXZvFQp08.s9o6KZpgML6Jj7gcojgGLPKexxlB93q",
+      "name": "ganesh",
+      "createdAt": "2026-02-11T09:49:14.731Z",
+      "updatedAt": "2026-02-11T09:49:14.731Z"
+    },
+    {
+      "id": "3641c76a-0580-4df6-b7a1-10fd2bc27a4d",
+      "email": "newuser@example.com",
+      "password": "$2a$10$0eRs/RCSFELSMuXy9C4HmuIpCH/teL1wJ7ydzjLlak22QIC3Ctcj6",
+      "name": "New User",
+      "createdAt": "2026-02-11T10:12:37.673Z",
+      "updatedAt": "2026-02-11T10:12:37.673Z"
+    },
+    {
+      "id": "b5fbf00c-6df9-4743-8fc2-736ba0e91163",
+      "email": "ganesh@gmail.com",
+      "password": "$2a$10$zEhb69N9VScKe7s/yDXJTOu6vk2MmcdmY1yr8EAk1Uv6X0ZwRLcVe",
+      "name": "ganesh",
+      "createdAt": "2026-02-11T11:00:48.479Z",
+      "updatedAt": "2026-02-11T11:00:48.479Z"
+    }
+  ],
+  "tasks": []
+}

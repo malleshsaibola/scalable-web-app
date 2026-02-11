@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     // Validate required fields
-    const validation = validateRequestBody(body, ['email', 'password', 'name']);
+    const validation = validateRequestBody(body, ['name', 'email', 'password']);
     if (!validation.isValid) {
       return createErrorResponse('Validation failed', 400, validation.errors);
     }
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user already exists
-    const existingUser = await findUserByEmail(email);
+    const existingUser = findUserByEmail(email);
     if (existingUser) {
       return createErrorResponse('Email already registered', 400, {
         email: ['This email is already registered'],
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     const hashedPassword = await hashPassword(password);
 
     // Create user
-    const user = await createUser({
+    const user = createUser({
       email,
       password: hashedPassword,
       name,

@@ -132,10 +132,20 @@ export function validateRequestBody(
   errors?: Record<string, string[]>;
 } {
   const errors: Record<string, string[]> = {};
+  
+  // Field name mapping for better error messages
+  const fieldLabels: Record<string, string> = {
+    name: 'Name',
+    email: 'Email',
+    password: 'Password',
+    title: 'Title',
+    description: 'Description',
+  };
 
   for (const field of requiredFields) {
     if (!body[field] || (typeof body[field] === 'string' && body[field].trim() === '')) {
-      errors[field] = [`${field} is required`];
+      const label = fieldLabels[field] || field;
+      errors[field] = [`${label} is required`];
     }
   }
 

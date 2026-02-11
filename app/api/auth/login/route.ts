@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     const { email, password } = body;
 
     // Find user by email
-    const user = await findUserByEmail(email);
+    const user = findUserByEmail(email);
     if (!user) {
       // Generic error to prevent user enumeration
       return createErrorResponse('Invalid credentials', 401);
