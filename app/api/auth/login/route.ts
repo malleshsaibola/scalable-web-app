@@ -9,7 +9,6 @@ import { findUserByEmail } from '@/lib/db-helpers';
 import {
   comparePassword,
   generateToken,
-  validateCredentials,
   createSessionData,
 } from '@/lib/auth';
 import { createErrorResponse, validateRequestBody } from '@/lib/middleware';
