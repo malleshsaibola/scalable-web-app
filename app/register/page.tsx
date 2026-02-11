@@ -62,7 +62,9 @@ export default function RegisterPage() {
       await register(email, password, name);
       // Redirect happens in AuthContext
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Registration failed');
+      console.error('Registration error:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Registration failed';
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }

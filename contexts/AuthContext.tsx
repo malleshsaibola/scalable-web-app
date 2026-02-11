@@ -64,7 +64,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Login failed');
+        // Handle detailed error messages
+        let errorMessage = data.message || 'Login failed';
+        
+        // If there are field-specific errors, show them
+        if (data.details) {
+          const detailMessages = Object.entries(data.details)
+            .map(([field, errors]) => {
+              if (Array.isArray(errors)) {
+                return errors.join(', ');
+              }
+              return errors;
+            })
+            .join('. ');
+          
+          if (detailMessages) {
+            errorMessage = detailMessages;
+          }
+        }
+        
+        throw new Error(errorMessage);
       }
 
       // Store token and user
@@ -101,7 +120,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Registration failed');
+        // Handle detailed error messages
+        let errorMessage = data.message || 'Registration failed';
+        
+        // If there are field-specific errors, show them
+        if (data.details) {
+          const detailMessages = Object.entries(data.details)
+            .map(([field, errors]) => {
+              if (Array.isArray(errors)) {
+                return errors.join(', ');
+              }
+              return errors;
+            })
+            .join('. ');
+          
+          if (detailMessages) {
+            errorMessage = detailMessages;
+          }
+        }
+        
+        throw new Error(errorMessage);
       }
 
       // Store token and user
